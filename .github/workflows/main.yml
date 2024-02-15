@@ -48,9 +48,8 @@ jobs:
 
 
     - name: Set up kubectl
-      uses: azure/k8s-set-context@v1
-      with:
-        kubeconfig: ${{ secrets.KUBE_CONFIG_DATA }}
+      uses: marcofranssen/setup-kubectl@v0.3.0
+      id: kubectl
       
     - name: Apply Kubernetes manifest
       run: |
