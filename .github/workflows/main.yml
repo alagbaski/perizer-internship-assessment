@@ -41,8 +41,8 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t your_dockerhub_username/your_image_name:${{ github.sha }} .
-        docker push your_dockerhub_username/your_image_name:${{ github.sha }}
+        docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/jupiter:latest .
+        docker push ${{ secrets.DOCKERHUB_USERNAME }}/jupiter:latest
 
 
     - name: Set up kubectl
