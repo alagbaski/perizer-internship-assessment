@@ -1,0 +1,55 @@
+name: 'Jupiter Pipeline'
+
+on:
+  push:
+    branches:
+      - main
+
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  deploy:
+    name: 'AKSCluster'
+    runs-on: ubuntu-latest
+
+
+    defaults:
+      run:
+        shell: bash
+
+    env:
+      ARM_CLIENT_ID: ${{ secrets.ARM_CLIENT_ID }}
+      ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
+      ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+
+    steps:
+
+    - name: Checkout Git Repo
+      uses: actions/checkout@v4
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Login to Docker Hub
+      uses: docker/login-action@v2
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_ACCESS_TOKEN }}
+
+    - name: Build Docker image
+      run: |
+        docker build -t your_dockerhub_username/your_image_name:${{ github.sha }} .
+        docker push your_dockerhub_username/your_image_name:${{ github.sha }}
+
+
+    - name: Set up kubectl
+      uses: azure/k8s-set-context@v1
+      with:
+        kubeconfig: ${{ secrets.KUBE_CONFIG_DATA }}
+      
+    - name: Apply Kubernetes manifest
+      run: |
+        kubectl apply -f deployment.yaml
