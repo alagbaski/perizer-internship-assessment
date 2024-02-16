@@ -46,7 +46,7 @@ Follow these steps to deploy the web application, containerize it with Docker, p
     - Create GitHub Actions workflow YAML file in the `.github/workflows` directory.
     - Define the workflow to trigger build and deployment processes.
     - Ensure necessary secrets and environment variables are configured securely.
-    - Here is the link to the github action workflows file and kubernetes deployment file [GitHub Action File](../perizer-internship-assessment/.github/workflows/main.yml) & [Deployment File](./deployment.yaml)
+    - Here is the link to the github action workflows file and kubernetes deployment file [GitHub Action File](./perizer-internship-assessment/.github/workflows/main.yml) & [Deployment File](./deployment.yaml)
     - Test the workflow by pushing changes to the main branch.
 
 ## Learning Experience
