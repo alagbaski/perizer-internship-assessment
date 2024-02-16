@@ -1,7 +1,7 @@
 # Cloud DevOps Assessment Documentation
 
 <p align="right">
-    <img src="../perizer-internship-assessment/image/aks-design.PNG" />
+    <img src="../perizer-internship-assessment/image/aks-design.PNG">
 </p>
 
 ---
