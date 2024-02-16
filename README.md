@@ -3,6 +3,7 @@
 ![Architecture Design](./image/aks-design.PNG)
 
 ---
+
 ## Project Overview
 This documentation provides a comprehensive guide for deploying a simple web application, containerizing it with Docker, provisioning infrastructure with Terraform on Azure, and setting up CI/CD with GitHub Actions.
 
@@ -66,4 +67,5 @@ Throughout this project, several insights were gained, and challenges were encou
 
 ## Conclusion
 This project presented an opportunity to delve into various aspects of cloud DevOps, including containerization, infrastructure provisioning, and CI/CD automation. By following the outlined steps and embracing a continuous learning mindset, developers can streamline the deployment process and enhance collaboration within their teams.As technology continues to evolve, embracing best practices and staying updated with emerging trends will be essential for success in the ever-changing landscape of DevOps.
+
 ---
