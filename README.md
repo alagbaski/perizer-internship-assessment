@@ -46,7 +46,7 @@ Follow these steps to deploy the web application, containerize it with Docker, p
     - Create GitHub Actions workflow YAML file in the `.github/workflows` directory.
     - Define the workflow to trigger build and deployment processes.
     - Ensure necessary secrets and environment variables are configured securely.
-    - Here is the link to the github action workflows file and kubernetes deployment file [GitHub Action File](./perizer-internship-assessment/.github/workflows/main.yml) & [Deployment File](./deployment.yaml)
+    - Here is the link to the github action workflows file and kubernetes deployment file [GitHub Action File](./.github/workflows/main.yml) & [Deployment File](./deployment.yaml)
     - Test the workflow by pushing changes to the main branch.
 
 ## Learning Experience
@@ -62,6 +62,7 @@ Throughout this project, several insights were gained, and challenges were encou
 - **Kubeconfig Integration**: Implementing the kubeconfig file in the GitHub Actions pipeline for communication with the AKS cluster was challenging initially.
 - **Service Principal Role Assignment**: Assigning the appropriate contributor role to the service principal used for infrastructure provisioning was not initially considered, which caused permissions issues.
 - **Federated Credentials Generation**: Generating federated credentials for the GitHub Actions pipeline to authenticate with Azure services posed an additional challenge because i wasn't aware of it use case, finally understood the concept after going through several documentation.
+- **Terraform Cloud Remote State**: Authentication issues with Terraform Cloud remote state necessitated deploying the code locally and storing the state file remotely.
 
 ## Conclusion
 This project presented an opportunity to delve into various aspects of cloud DevOps, including containerization, infrastructure provisioning, and CI/CD automation. By following the outlined steps and embracing a continuous learning mindset, developers can streamline the deployment process and enhance collaboration within their teams.As technology continues to evolve, embracing best practices and staying updated with emerging trends will be essential for success in the ever-changing landscape of DevOps.
